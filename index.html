@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SoCal Coffee Shop</title>
+        <meta name="author" content="Antonio Rodriguez Jr">
+        <meta name="description" content="Stop by SoCal Coffee Shop the next time you need a pick me up! We offer great tasting coffee and tea!">
+
+
+        <!-- Licensing Statements for chosen fonts
+
+        Copyright 2024 The Montserrat.Git Project Authors (https://github.com/JulietaUla/Montserrat.git)
+        This Font Software is licensed under the SIL Open Font License, Version 1.1 . This license is copied below, 
+        and is also available with a FAQ at: https://openfontlicense.org
+
+        SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+
+        Copyright 2015 the Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)
+        This Font Software is licensed under the SIL Open Font License, Version 1.1 . This license is copied below, 
+        and is also available with a FAQ at: https://openfontlicense.org
+
+        SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007 -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+        <!-- all images used on this site were sourced from Unsplash for educational use. 
+        the official Legal Licensing statement from Unsplash can be found here:
+
+        Unsplash grants you an irrevocable, nonexclusive, worldwide copyright license to 
+        download, copy, modify, distribute, perform, and use images from Unsplash for free, 
+        including for commercial purposes, without permission from or 
+        attributing the photographer or Unsplash. This license does not include the 
+        right to compile images from Unsplash to replicate a similar or competing service. -->
+
+        <link rel="stylesheet" href="styles.css">
+        <script async src="script.js"></script> 
+    </head>
+    <body> 
+        <header class="nav-container">
+            <div class="site-logo">
+                <a href="#">SoCal Coffee Shop</a>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#missions">About</a></li>
+                    <li><a href="#locs-hrs">Locations</a></li>
+                    <li><a href="#submit">Contact</a></li>
+                </ul>
+            </nav>
+            <button type="button" id="dark">Dark Mode Toggle</button>
+        </header>
+        <main>
+            <h1>Get your next energy fix at SoCal Coffee Shop</h1>
+            <section id="product">
+                <div id="product-content">
+                    <h2>Products</h2>
+                    <p>Here is a list of the current products that we are offering. We've spent a long time perfecting our approach to good tasting caffeinated drinks. 
+                        As always, we welcome and questions, concerns, and recommendations for improving our product offerings and styles.</p>
+                    <img src="images/coffee-shop.jpg" alt="A coffee. croissant, and book on a table at a coffee shops outside patio" height="500">
+                </div>    
+                <div id="products-display">
+                    <div id="coffee-content">
+                        <img src="/images/drip-coffee.jpg" alt="image of a pot of drip coffee starting to be brewed" width="300">
+                        <h3>Drip Coffee!</h3>
+                        <p>Starts at $4</p>
+                        <p>Our finely crafted drip coffee.<br>
+                        You can customize the flavor with any one of our housemade syrups.<br>
+                        Available in small, medium, and large. And in hot or iced.</p>
+                    </div>
+                    
+                    <div id="latte-content" class="hide">
+                        <img src="/images/latte.jpg" alt="an iced latte glass cup starting to mix the milk together" width="300">
+                        <h3>Rich Cafe Latte</h3>
+                        <p>Starts at $5</p>
+                        <p>Need a stronger and full taste drink?<br>
+                        Our cafe lattes are not only a quick energy pick-me-up, but taste great too!<br>
+                        Iced or Hot, small through large. We have a wide array of options for your needs.</p>
+                    </div>
+
+                    <div id="matcha-content" class="hide">
+                        <img src="/images/matcha-latte.jpg" alt="an iced matcha latte on a wooden table" width="300">
+                        <h3>Premium Japanese Matcha Latte</h3>
+                        <p>Starts at $7</p>
+                        <p>Made with the utmost care and patience.<br>
+                        Never pre-sweetened. Fully customizable. Always delicious.<br>
+                        Primarily served hot with steamed milk, but can also be changed to how you like it.</p>
+                    </div>
+                    <button type="submit" class="button-active" id="coffee">Drip Coffee</button>
+                    <button type="submit" class="button" id="latte">Latte</button>
+                    <button type="submit" class="button" id="matcha">Matcha</button>
+                </div>
+            </section>
+            <section class="combine-content">
+                <div class="mission">
+                    <h2 id="missions">Our Mission</h2>
+                    <p>Founded in Southern California in 1990, our goal has always been to create great tasting coffee that energizes and replenishes. <br>
+                    Whenever you take a drink of a coffee from SoCal Coffee Shop, know that it was made with great care and only the finest ingredients. <br>
+                    If you ever have any questions or concerns, do not hesitate to let us know.</p>
+                </div>
+                <form id="submit">
+                    <fieldset>
+                        <legend>Contact Us</legend>
+                        <label for="name">Enter your full name:<span class="required">*</span></label>
+                        <span class="message">Please enter your full name</span>
+                        <input type="text" id="name" name="name">
+                        
+                        <label for="phone">Enter your phone number:<span class="required">*</span></label>
+                        <span class="message">Please a valid phone number</span>
+                        <input type="tel" id="phone" name="phone">
+                        
+                        <label for="email">Enter your email address:</label>
+                        <input type="email" id="email" name="email">
+                        <span class="message">Please use correct email format. example@email.com</span>
+                        
+                        <div id="radio">
+                            <input type="radio" name="contact" value="phone" id="phoneNum">
+                            <label for="phone">Phone</label>
+                            <input type="radio" name="contact" value="email" id="e-mail" checked>
+                            <label for="email">Email</label>
+                        </div>
+                        
+                        <label for="comments">Leave your comments:<span class="required">*</span></label>
+                        <span class="message">Please enter your comments</span>
+                        <textarea id="comments" name="comments"></textarea>
+
+                        <input type="submit" value="Submit!" class="submit-form">
+                    </fieldset>
+                    <section id="confirm" class="hide">
+                    <h3>Thank you for your feedback!</h3>
+                    <p>Your response has been submitted. This is what you have sent us:</p>
+                    <p id="submission"></p>
+                </section>
+                </form>
+            </section>
+            <section id="locs-hrs">
+                <div class="locations">
+                    <h2>Locations</h2>
+                    <p>Here is a list of all our locations! We are looking to keep expanding. <br>
+                        Let us know if you want us to look into getting a location near you!</p>
+                    <ul>
+                        <li>San Diego, CA</li>
+                        <li>Los Angeles, CA</li>
+                        <li>Ontario, CA</li>
+                        <li>Anaheim, CA</li>
+                    </ul>
+                </div>
+
+                <div class="table">
+                    <table>
+                        <caption>Hours for all locations</caption>
+                        <thead>
+                            <tr>
+                                <th>Monday - Friday</th>
+                                <th>Saturday - Sunday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7am - 7pm</td>
+                                <td>10am - 7pm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+            <section class="guess-game">
+                <h2>Win a discount code!</h2>
+                <div class="guessing-game">
+                <p>We love giving back to our community. To win a $5 off coupon code, try to match our random number generator! We will create a new number with every guess. Good luck!</p>
+                    <div class="usr-entr">
+                        <label for="game">Guess a number between 1 and 10:</label>
+                        <input type="number" id="game" name="game" min="1" max="10">
+                        <button type="submit" id="playgame">Play the game!</button>
+                    </div>
+                    <p id="result"></p>
+                </div>
+            </section>
+        </main>
+        <footer><p>&copy; Copyright 2026</p></footer>
+    </body>
+</html>

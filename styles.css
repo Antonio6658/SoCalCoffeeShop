@@ -1,0 +1,402 @@
+@layer base, layout, components;
+
+@layer base{
+
+    /* dark mode class toggle */
+    :root.dark-mode{
+        --primary: #ffecb8;
+        --secondary: #351904;
+        --mainbgcolor: #1f1f1f;
+    }
+
+    :root{
+        /* design variables for color, spacing, font family, sizing and more */
+
+        /* colors chosen for site */
+        --primary: #351904;
+        --secondary: #FFECB8;
+        --error: #FF2C2C;
+        --mainbgcolor: #fff;
+
+        /* font families */
+        --headings: 'Montserrat', Georgia, serif;
+        --font-family: 'Cormorant Garamond', Garamond, serif;
+ 
+        /* global font size for all text */
+        font-size: 1rem;
+
+    }
+
+    /* declare max size for body content, declare colors and font styles */
+    body{
+        max-inline-size: 1280px;
+        margin-inline: auto;
+        line-height: 1.35;
+        font-family: var(--font-family);
+        background-color: var(--secondary);
+    }
+
+    /* main padding for content */
+    main{
+        padding-inline: 2rem;
+        padding-block: 1rem;
+    }
+
+    /* footer adjustments, centering info, adding spacing and a border */
+    footer{
+        display: flex;
+        justify-content: center;
+        padding-block: 1rem;
+        border-top: 1px solid var(--primary);
+        font-weight: bold;
+    }
+
+    /* give main background color to header main and footer   */
+    header, main, footer{
+        background-color:var(--mainbgcolor);
+    }
+
+    /* headings styles   */
+    h1, h2, h3{
+        font-weight: bold;
+        font-family: var(--headings);
+        color:var(--primary);
+    }
+
+    /* base paragraph styles  */
+    p{
+        max-inline-size: 68ch;
+        font-family: var(--font-family);
+        color: var(--primary);
+    }
+
+    /* base image styles  */
+    img{
+        display: block;
+        margin-inline: auto;
+    }
+
+    /* padding for under the h1   */
+    h1{
+        padding-block-end: 1rem;
+    }
+}
+
+@layer layout{
+    /* responsive layout / colors / fonts 
+    choices */
+
+    /* navigation choices */
+
+    /* targets styles for entire header with nav bar */
+    .nav-container{
+        /* declares flexbox and decides spacing with a bottom border */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .8rem;
+        border-bottom: 2px solid var(--primary);
+    }
+
+    /* site logo styles, big and bold font with a reference link to homepage and adds heading fonts */
+    .site-logo a{
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary);
+        font-family: var(--headings);
+    }
+
+
+    /* styles for navigation bar, adds a flex box and removes the list styles so no squares or dots next to links */
+    .nav-list{
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 2rem;
+    }
+
+
+    /* takes away the text decoration, gives the primary color to links and makes font bold */
+    .nav-list a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* changes background and font colors on hover, creates a box around it so you can visually see where you are hovering. */
+    .nav-list a:hover{
+        color: var(--secondary);
+        background-color: var(--primary);
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    /* make form content stack vertically instead of horizontally */
+    fieldset{
+        display: grid;
+        grid-template-columns: 1fr;
+        color: var(--primary);
+    }
+
+
+    /* create a grid for our mission and form input section */
+    .combine-content{
+        display: grid;
+        padding-block: 4rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    /* make the product section into a grid and decide spacing */
+    #product{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        border-block: 1px solid var(--primary);
+        padding-block: 2rem;
+    }
+
+
+    /* coffeeshop img sizing to fill whitespace properly */
+    #product-content img{
+        display: block;
+        margin-inline: auto;
+        width: 80%;
+        padding-top: 2rem;
+    }
+
+    /* decide the spacing for the changing product display */
+    #products-display{
+        padding-block: 2rem;
+        padding-left: 3rem;
+        border-left: 1px solid var(--primary);
+    }
+
+
+    /* make the product display descriptions more readable by increasing lineheight, size, and making max inline characters */
+    #products-display p, .mission p{
+        line-height: 1.5;
+        font-size: 1.15rem;
+        max-inline-size: 55ch;
+    }
+
+    /* text description for product sizing and readability */
+     #product-content p {
+        line-height: 1.5;
+        font-size: 1.15rem;
+        max-inline-size: 55ch;
+        font-weight: 600;
+     }
+
+    /* add a grid to locations and hours section */
+    #locs-hrs{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+        padding-block: 3rem;
+        border-top: 1px solid var(--primary);
+    }
+   
+    /* gives the location information a border and background color. adds spacing with the padding  */
+    #locs-hrs .locations{
+        border-block: 2px solid var(--primary);
+        padding: 2rem;
+        background-color: var(--secondary);
+    }
+
+    /* changes the list style for the locations into squares and adds margin and padding to separate the content */
+    #locs-hrs .locations ul{
+        margin-top: 1rem;
+        padding-left: 1.5rem;
+        list-style: square;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* makes the location p text more readable. */
+    #locs-hrs p {
+        line-height: 1.5;
+        font-size: 1.15rem;
+        font-weight: 600;
+    }
+
+
+    /* makes the list items readable and gives enough spacing to enhance readability. */
+    #locs-hrs .locations li{
+        padding-block: 1rem;
+        font-size: 1.15rem;
+        font-weight: bold;
+        color: var(--primary);
+    }
+
+
+    /* add a grid to guessing game section */
+    .guess-game{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: start;
+        gap: 2rem;
+        padding-block: 3rem;
+        border-top: 1px solid var(--primary);
+    }
+
+    /* specific guessing game content(description, entrybox, submit button) is now shown in a flexbox with adequate spacing. */
+    .guessing-game{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        gap: 1rem;
+        align-items: start;
+        padding-block-start: 5rem;
+    }
+    
+    /* makes the guessing game paragraph easier to read */
+    .guessing-game p{
+        line-height: 1.35;
+        font-size: 1.15rem;
+        font-weight: bold;
+    }
+
+    /* specific user entry section, adds spacing and readability */
+    .usr-entr {
+        padding-block-start: 1rem;
+        font-weight: 600;
+        font-size: 1.15rem;
+        color: var(--primary);
+    }
+}
+
+@layer components{
+    /* styles area for forms, buttons */
+
+    /* class that hides content from user */
+    .hide{
+        display: none;
+    }
+
+    /* error message class, make font bold and red and hide message until changed. */
+    .message{
+        display: none;
+        font-weight: bold;
+        color: var(--error);
+    }
+
+    /* error message red border for error handling */
+    .errorMsg{
+        border: 1px solid var(--error);
+    }
+
+    /* shows error message when .error is added */
+    .error{
+        display: block;
+    }
+
+    /* shows success message for when user submits the form  */
+    .show{
+        display: block;
+    }
+
+
+    /* button styles */
+
+    /* for the active button  */
+    .button-active{
+        /* background and text colors */
+        background-color: var(--mainbgcolor);
+        color: var(--primary);
+
+        /* border styles and rounded edges */
+        border: 2px solid var(--secondary);
+        border-radius: 5px;
+
+        /* shadow for box */
+        box-shadow: 0 2px 2px gray;
+
+        /* spacing for content */
+        padding-inline: 20px;
+        margin-inline: 5px;
+
+        /* bolder font than normal */
+        font-weight: 600;
+
+        /* cursor appears when hovering over */
+        cursor: pointer;
+    }
+
+    /* changes color when hovered over button */
+    .button-active:hover{
+        background-color: var(--primary);
+        color: var(--secondary);
+    }
+
+    /* for the non active buttons */
+
+    .button{
+        /* background and text colors */
+        background-color: var(--primary);
+        color: var(--secondary);
+
+        /* border styles and rounded edges */
+        border: 2px solid var(--secondary);
+        border-radius: 5px;
+
+        /* shadow for box */
+        box-shadow: 0 2px 2px gray;
+
+        /* spacing for content */
+        margin-inline: 5px;
+        padding-inline: 20px;
+
+        /* bolder font than normal */
+        font-weight: 600;
+
+        /* cursor appears when hovering over */
+        cursor: pointer;
+    }
+
+    /* added a hover style for non-active buttons */
+    .button:hover{
+        background-color: var(--secondary);
+        color: var(--primary);
+    }
+
+    /* target the table and gave it a border and changed the background color */
+    table{
+        background-color: var(--secondary);
+        border-block: 2px solid var(--primary);
+    }
+
+    /* made the size and weight of the caption of the table bigger. gave it the heading font, a bottom margin */
+    caption{
+        font-family: var(--headings);
+        font-weight: bold;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    /* make the table headings more readable, text transform to all uppercase, and give it padding for space. */
+    th{
+        font-family: var(--headings);
+        color: var(--primary);
+        padding: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* table description font readability, colors, centering, and sizing */
+    td{
+        font-weight: bold;
+        letter-spacing: 2px;
+        padding: 2.5rem;
+        text-align: center;
+        color: var(--primary);
+        font-size: 1.2rem;
+        background-color: var(--mainbgcolor);
+    }
+
+}
